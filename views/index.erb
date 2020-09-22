@@ -5,10 +5,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Leprosorium</title>
 </head>
-<body>
-	<h2>Home page</h2>
+  <body>
+    <h2>Home page</h2>
 
-	<h3>Last posts:</h3>
-	
-</body>
+    <h3>Last posts:</h3>
+
+    <form>
+
+      <div class="form-group">
+        <input name="post[name]" type="text" class="form-control" id="exampleInputName" placeholder="Enter your name">
+      </div>
+
+      <div class="form-group">
+        <textarea name="post[content]" class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Enter your content post"></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Add post</button>
+    </form>
+  </body>
 </html>
