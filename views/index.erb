@@ -10,7 +10,17 @@
 
     <h3>Last posts:</h3>
 
-    <form>
+    <% @posts.each do |post| %>
+      <p>
+        @<a href="/"><%= post.name %></a> <br>
+        <br>
+        <%= post.content %><br>
+        <%= post.created_at %>
+      </p>
+      <hr>
+    <% end %>
+
+    <form action="/" method="post">
 
       <div class="form-group">
         <input name="post[name]" type="text" class="form-control" id="exampleInputName" placeholder="Enter your name">

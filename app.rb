@@ -15,10 +15,11 @@ class Comment < ActiveRecord::Base
 end
 
 before do
-  @posts = Post.all
+  @posts = Post.order 'created_at DESC'
 end
 
 get '/' do
+
 	erb :index
 end
 
