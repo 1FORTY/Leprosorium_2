@@ -6,6 +6,14 @@
   <title>Leprosorium</title>
 </head>
 <body>
-  
+  <h2>Post <%= @post_id %>:</h2>
+
+  <a href="/">@<%= @post.name %></a><br>
+  <br>
+  <%= @post.content %><br>
+  <br>
+  Created at: <%= @post.created_at %><br>
+  <hr>
+
 </body>
 </html>

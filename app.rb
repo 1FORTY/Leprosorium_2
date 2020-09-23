@@ -37,7 +37,8 @@ post '/' do
 end
 
 get '/post/:post_id' do
-  post_id = params[:post_id]
+  @post_id = params[:post_id]
+  @post = Post.find(@post_id)
 
   erb :post
 end
