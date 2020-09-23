@@ -7,7 +7,8 @@ require 'sinatra/activerecord'
 set :database, { adapter: 'sqlite3', database: 'leprosorium.db' }
 
 class Post < ActiveRecord::Base
-
+  validates :name, presence: true, length: { minimum: 3, maximum: 15 }
+  validates :content, presence: true, length: { minimum: 10, maximum: 200 }
 end
 
 class Comment < ActiveRecord::Base
@@ -25,7 +26,12 @@ end
 
 post '/' do
   p = Post.new params[:post]
-  p.save
+  
+  if !p.save
+
+    @error = p.errors.full_messages.first
+  
+  end
 
   erb :index
 end
