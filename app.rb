@@ -35,3 +35,9 @@ post '/' do
 
   erb :index
 end
+
+get '/post/:post_id' do
+  post_id = params[:post_id]
+
+  erb :post
+end
