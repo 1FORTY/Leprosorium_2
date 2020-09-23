@@ -24,8 +24,8 @@ get '/' do
 end
 
 post '/' do
-  @posts = Post.new params[:post]
-  @posts.save
+  p = Post.new params[:post]
+  p.save
 
   erb :index
 end
