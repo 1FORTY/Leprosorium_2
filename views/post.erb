@@ -18,11 +18,11 @@
   <form action="/post/<%=@post_id%>" method="POST">
 
   <div class="form-group">
-    <input name="" value="" type="text" class="form-control" placeholder="Enter your name">
+    <input name="com[name]" value="" type="text" class="form-control" placeholder="Enter your name">
   </div>
 
   <div class="form-group">
-    <textarea name="" value="" class="form-control"rows="3" placeholder="Enter your message"></textarea>
+    <textarea name="com[content]" value="" class="form-control"rows="3" placeholder="Enter your message"></textarea>
   </div>
   
   <button type="submit" class="btn btn-primary">Add comment</button>

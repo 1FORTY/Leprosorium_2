@@ -13,6 +13,8 @@ class Post < ActiveRecord::Base
 end
 
 class Comment < ActiveRecord::Base
+  validates :name, presence: true, length: { minimum: 3, maximum: 15 }
+  validates :content, presence: true, length: { minimum: 10, maximum: 200 }
   belongs_to :post
 end
 
@@ -39,8 +41,20 @@ end
 
 get '/post/:id' do
   @post_id = params[:id]
-
   @post = Post.find(@post_id)
 
   erb :post
 end
+
+post '/post/:id' do
+  @post_id = params[:id]
+  @post = Post.find(@post_id)
+
+  comments = Comment.new params[:com]
+  if !comments.save
+    @error = comments.errors.full_messages.first
+  end
+
+  erb :post
+end
+
