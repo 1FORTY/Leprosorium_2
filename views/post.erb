@@ -15,6 +15,17 @@
   Created at: <%= @post.created_at %><br>
   <hr>
 
+  <%@comment.each do |comment|%>
+    <p>
+      <a href="/">@<%=comment.name%></a><br>
+      <br>
+      <%=comment.content%><br>
+      <br>
+      created_at: <%=comment.created_at%>
+    </p>
+    <hr>
+  <%end%>
+
   <form action="/post/<%=@post_id%>" method="POST">
 
   <div class="form-group">

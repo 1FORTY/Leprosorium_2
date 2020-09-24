@@ -20,6 +20,7 @@ end
 
 before do
   @posts = Post.order 'created_at DESC'
+  @comment = Comment.all
 end
 
 get '/' do
