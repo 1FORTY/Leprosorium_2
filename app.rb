@@ -37,16 +37,10 @@ post '/' do
   erb :index
 end
 
-get '/post/:post_id' do
-  @post_id = params[:post_id]
+get '/post/:id' do
+  @post_id = params[:id]
+
   @post = Post.find(@post_id)
 
-  @comments = Comment.where(post_id: @post_id)
-
   erb :post
-end
-
-post '/post/:post_id' do
-  comment = Comment.new params[:com]
-  comment.save
 end
