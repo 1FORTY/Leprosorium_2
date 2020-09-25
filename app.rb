@@ -18,7 +18,7 @@ end
 
 before do
   @posts = Post.order 'created_at DESC'
-  @comment = Comment.all
+  @comment = Comment.order 'created_at DESC'
 end
 
 get '/' do
