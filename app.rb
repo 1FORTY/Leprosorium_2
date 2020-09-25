@@ -9,13 +9,11 @@ set :database, { adapter: 'sqlite3', database: 'leprosorium.db' }
 class Post < ActiveRecord::Base
   validates :name, presence: true, length: { minimum: 3, maximum: 15 }
   validates :content, presence: true, length: { minimum: 10, maximum: 200 }
-  has_many :comments
 end
 
 class Comment < ActiveRecord::Base
   validates :name, presence: true, length: { minimum: 3, maximum: 15 }
   validates :content, presence: true, length: { minimum: 10, maximum: 200 }
-  belongs_to :post
 end
 
 before do
